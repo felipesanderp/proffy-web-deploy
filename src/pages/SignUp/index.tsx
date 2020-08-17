@@ -99,7 +99,11 @@ const SignUp: React.FC = () => {
               para começar.
             </p>
 
-            <Input name="name" placeholder="Nome"  />
+            <Input
+              name="name"
+              placeholder="Nome"
+              containerStyle={{ borderTopRightRadius: 8, borderTopLeftRadius: 8 }}
+            />
             <Input name="lastname" placeholder="Sobrenome"  />
             <Input name="email" placeholder="Email"  />
             <Input
@@ -108,6 +112,7 @@ const SignUp: React.FC = () => {
               placeholder="Senha"
               toggleVisibility={handleToggleVisibility}
               icon={visibility ? EyeVisible : AiOutlineEye}
+              containerStyle={{ borderBottomRightRadius: 8, borderBottomLeftRadius: 8 }}
             />
             
             <Button type="submit" loading={loading}>Concluir Cadastro</Button>

@@ -90,7 +90,11 @@ const SignIn: React.FC = () => {
           <Form onSubmit={handleSubmit} ref={formRef}>
             <h1>Fazer login</h1>
 
-            <Input name="email" placeholder="Email" />
+            <Input
+              name="email"
+              placeholder="Email"
+              containerStyle={{ borderTopRightRadius: 8, borderTopLeftRadius: 8 }}
+            />
             
             <Input
               name="password" 
@@ -98,6 +102,7 @@ const SignIn: React.FC = () => {
               placeholder="Senha"
               toggleVisibility={handleToggleVisibility}
               icon={visibility ? EyeVisible : AiOutlineEye}
+              containerStyle={{ borderBottomRightRadius: 8, borderBottomLeftRadius: 8 }}
             />
 
             <div className="remember-forgot">

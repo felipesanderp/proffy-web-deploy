@@ -86,7 +86,11 @@ const ForgotPassword: React.FC = () => {
               Não esquenta, vamos dar um jeito nisso.
             </p>
 
-            <Input name="email" placeholder="Email"  />
+            <Input
+              name="email"
+              placeholder="Email"
+              containerStyle={{ borderRadius: 8 }}
+            />
             
             <Button type="submit" loading={loading}>Enviar</Button>
           </Form>

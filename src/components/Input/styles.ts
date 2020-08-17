@@ -16,7 +16,6 @@ export const Container = styled.div<ContainerProps>`
   height: 72px;
   color: var(--color-text-base);
   border: 1px solid var(--color-line-in-white);
-  border-radius: 8px;
 
   .border {
     border-left: 2px solid var(--color-box-footer);
