@@ -7,6 +7,11 @@ interface ContainerProps {
   isErrored: boolean
 }
 
+interface LabelProps {
+  isFocused: boolean;
+  isFilled: boolean;
+}
+
 export const Container = styled.div<ContainerProps>`
   display: flex;
   align-items: center;
@@ -40,18 +45,18 @@ export const Container = styled.div<ContainerProps>`
     `}
 
   input {
-    position: relative;
+   
     width: 100%;
-    flex: 1;
+    height: 65px;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
     background: transparent;
     border: 0;
     outline: 0;
-    padding: 24px;
+    padding: 12px 12px 0 12px;
     color: var(--color-text-base);
-      
-    &::placeholder {
-      color: var(--color-text-complement);
-    }
+
+    align-self: flex-end;
   }
 
   svg {
@@ -59,6 +64,42 @@ export const Container = styled.div<ContainerProps>`
     flex-shrink: 0;
   }
 `;
+
+export const Label = styled.label<LabelProps>`
+    position: absolute;
+    color: var(--color-text-complement);
+    font-size: 1.6rem;
+    top: 50%;
+    left: 12px;
+    cursor: text;
+    pointer-events: none;
+
+    transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    
+    transition: 0.15s ease-in-out;
+
+    ${(props => 
+    props.isFocused && 
+    css`
+      top: 2.35rem;
+      font-size: 12px;
+      color: #C1BCCC;
+    } 
+  `)}
+
+  ${(props => 
+    props.isFilled && 
+    css`
+      top: 2.35rem;
+      font-size: 12px;
+      color: #C1BCCC;
+    } 
+  `)}
+`
+
+export const Eye = styled.div``;
 
 export const Error = styled(Tooltip)`
   height: 20px;
@@ -77,5 +118,3 @@ export const Error = styled(Tooltip)`
     }
   }
 `;
-
-export const Eye = styled.div``;

@@ -92,14 +92,16 @@ const SignIn: React.FC = () => {
 
             <Input
               name="email"
-              placeholder="Email"
+              label="Email"
+              autoCorrect="false"
+              autoCapitalize="false"
               containerStyle={{ borderTopRightRadius: 8, borderTopLeftRadius: 8 }}
             />
             
             <Input
               name="password" 
               type={visibility ? 'text' : 'password'}
-              placeholder="Senha"
+              label="Senha"
               toggleVisibility={handleToggleVisibility}
               icon={visibility ? EyeVisible : AiOutlineEye}
               containerStyle={{ borderBottomRightRadius: 8, borderBottomLeftRadius: 8 }}

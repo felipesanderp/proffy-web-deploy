@@ -101,15 +101,24 @@ const SignUp: React.FC = () => {
 
             <Input
               name="name"
-              placeholder="Nome"
+              label="Nome"
               containerStyle={{ borderTopRightRadius: 8, borderTopLeftRadius: 8 }}
             />
-            <Input name="lastname" placeholder="Sobrenome"  />
-            <Input name="email" placeholder="Email"  />
+            <Input
+              name="lastname"
+              label="Sobrenome"
+              autoCorrect="false"
+            />
+            <Input
+              name="email"
+              label="Email"
+              autoCorrect="false"
+              autoCapitalize="false"
+            />
             <Input
               name="password"
               type={visibility ? 'text' : 'password'}
-              placeholder="Senha"
+              label="Senha"
               toggleVisibility={handleToggleVisibility}
               icon={visibility ? EyeVisible : AiOutlineEye}
               containerStyle={{ borderBottomRightRadius: 8, borderBottomLeftRadius: 8 }}
