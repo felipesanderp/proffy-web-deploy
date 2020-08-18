@@ -10,6 +10,7 @@ interface ContainerProps {
 export const Container = styled.div<ContainerProps>`
   display: flex;
   align-items: center;
+  position: relative;
 
   background: var(--color-box-footer);
   width: 100%;
@@ -17,17 +18,20 @@ export const Container = styled.div<ContainerProps>`
   color: var(--color-text-base);
   border: 1px solid var(--color-line-in-white);
 
-  .border {
-    border-left: 2px solid var(--color-box-footer);
-    height: 48px;
-    border-radius: 8px;
-
-    ${(props) =>
-    props.isFocused &&
+  ${(props => 
+    props.isFocused && 
     css`
-      border-left-color: var(--color-primary);
-    `}
-  }
+      &::before {
+      position: absolute;
+      align-self: center;
+      content: '';
+      height: 48px;
+      left: -0.1%;
+      width: 2px;
+      border-radius: 8px;
+      background: var(--color-primary);
+    } 
+  `)}
 
   ${(props) =>
     props.isErrored &&
