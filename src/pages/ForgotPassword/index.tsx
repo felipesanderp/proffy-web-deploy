@@ -89,8 +89,8 @@ const ForgotPassword: React.FC = () => {
             <Input
               name="email"
               label="Email"
-              autoCorrect="false"
-              autoCapitalize="false"
+              autoCorrect="off"
+              autoCapitalize="off"
               containerStyle={{ borderRadius: 8 }}
             />
             

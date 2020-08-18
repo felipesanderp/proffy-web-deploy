@@ -103,17 +103,18 @@ const SignUp: React.FC = () => {
               name="name"
               label="Nome"
               containerStyle={{ borderTopRightRadius: 8, borderTopLeftRadius: 8 }}
+              autoCorrect="off"
             />
             <Input
               name="lastname"
               label="Sobrenome"
-              autoCorrect="false"
+              autoCorrect="off"
             />
             <Input
               name="email"
               label="Email"
-              autoCorrect="false"
-              autoCapitalize="false"
+              autoCorrect="off"
+              autoCapitalize="off"
             />
             <Input
               name="password"

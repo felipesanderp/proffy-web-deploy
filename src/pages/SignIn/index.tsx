@@ -93,8 +93,8 @@ const SignIn: React.FC = () => {
             <Input
               name="email"
               label="Email"
-              autoCorrect="false"
-              autoCapitalize="false"
+              autoCorrect="off"
+              autoCapitalize="off"
               containerStyle={{ borderTopRightRadius: 8, borderTopLeftRadius: 8 }}
             />
             
