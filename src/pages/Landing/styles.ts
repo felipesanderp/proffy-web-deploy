@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { FiPower } from 'react-icons/fi'; 
+import { FiPower } from 'react-icons/fi';
 
 export const Container = styled.div`
   width: 100vw;
