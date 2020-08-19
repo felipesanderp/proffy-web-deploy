@@ -15,10 +15,9 @@ import {
   Header,
   LogoutIcon,
   LogoContainer,
-  ArrowDown,
   ButtonsContainer,
   Buttons,
-  Info,
+  Title,
   Total
 } from './styles';
 
@@ -46,21 +45,20 @@ const Landing: React.FC = () => {
           </div>
 
           <img src={landingImg} alt="Landing"/>
-
-          <ArrowDown size={50} />
         </LogoContainer>
       </Content>
     
       <ButtonsContainer>
-        <Info>
+        <Title>
           <div>
             <p>Seja bem vindo.</p>
             <span>O que deseja fazer?</span>
           </div>
-        </Info>
+        </Title>
+
         <Total>
           <span>
-            Total de 285 conexeções já realizadas <img src={purpleHeartIcon} alt="Coração roxo" />
+            Total de 285 conexeções <br /> já realizadas <img src={purpleHeartIcon} alt="Coração roxo" />
           </span>
         </Total>
       
@@ -75,6 +73,7 @@ const Landing: React.FC = () => {
             Dar aulas
           </Link>
         </Buttons>
+
       </ButtonsContainer>
     </Container>
   );

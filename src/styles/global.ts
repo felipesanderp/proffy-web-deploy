@@ -47,11 +47,6 @@ textarea {
   color: var(--color-text-base);
 }
 
-.container {
-  width: 90vw;
-  max-width: 700px;
-}
-
 @media (min-width: 768px) {
   :root {
     font-size: 62.5%;

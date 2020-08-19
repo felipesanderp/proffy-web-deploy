@@ -1,5 +1,5 @@
-import styled, { keyframes } from 'styled-components';
-import { FiPower, FiChevronsDown } from 'react-icons/fi'; 
+import styled from 'styled-components';
+import { FiPower } from 'react-icons/fi'; 
 
 export const Container = styled.div`
   width: 100vw;
@@ -7,25 +7,22 @@ export const Container = styled.div`
 `;
 
 export const Content = styled.div`
+  height: 40vh;
   background: var(--color-primary);
-  height: 100vh;
 
-  @media (min-width: 1024px) {
+  @media (min-width: 768px) {
     height: 60vh;
   }
 `;
 
 export const Header = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  margin-left: auto;
-  margin-right: auto;
-
   width: 90vw;
-  max-width: 425px;
+  margin: 0 auto;
 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
   > div {
     display: flex;
     align-items: center;
@@ -67,28 +64,19 @@ export const Header = styled.div`
     }
   }
 
-  @media (min-width: 768px) {
-    max-width: 768px;
-  }
-
-  @media (min-width: 1024px) {
-    max-width: 1024px;
-  }
-
   @media (min-width: 1360px) and (max-width: 1439px) {
     width: 80vw;
     max-width: 1360px;
   }
-
   @media (min-width: 1440px) {
     width: 80vw;
     max-width: 1440px;
   }
-
   @media (min-width: 2560px) {
     width: 70vw;
     max-width: 2560px;
   }
+
 `;
 
 export const LogoutIcon = styled(FiPower)`
@@ -96,15 +84,12 @@ export const LogoutIcon = styled(FiPower)`
 `;
 
 export const LogoContainer = styled.div`
+  width: 90vw;
+  margin: 0 auto;
+
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-
-  margin-left: auto;
-  margin-right: auto;
-
-  max-width: 425px;
+  justify-content: space-between;
 
   > div {
     margin-top: 2.5rem;
@@ -112,10 +97,13 @@ export const LogoContainer = styled.div`
     flex-direction: column;
 
     > img {
+      display: none;
       height: 10rem;
+      margin-right: 5rem;
     }
 
     > h2 {
+      display: none;
       font-weight: 600;
       font-size: 2.4rem;
       line-height: 4.6rem;
@@ -126,14 +114,25 @@ export const LogoContainer = styled.div`
 
   > img {
     width: 100%;
-    height: 100%;
+    height: 25vh;
   }
 
   @media (min-width: 768px) {
     max-width: 768px;
 
+    > div {
+      > img {
+        display: initial;
+      }
+
+      > h2 {
+        display: initial;
+      } 
+    }
+
     > img {
-      height: 290px;
+      width: 300px;
+      height: 30vh;
     }
   }
 
@@ -150,7 +149,8 @@ export const LogoContainer = styled.div`
     }
 
     > img {
-      height: 250px;
+      width: 40vw;
+      height: 40vh;
     }
   }
 
@@ -171,12 +171,12 @@ export const LogoContainer = styled.div`
       height: 300px;
     }
   }
-
   @media (min-width: 2560px) {
     width: 70vw;
     max-width: 2560px;
 
     > div {
+
       > img {
         height: 13rem;
       }
@@ -188,70 +188,24 @@ export const LogoContainer = styled.div`
   }
 `;
 
-const scrollAnimation = keyframes`
-  0%, 20%, 50%, 80%, 100% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(-25px);
-  }
-  60% {
-    transform: translateY(-15px);
-  }
-`;
-
-export const ArrowDown = styled(FiChevronsDown)`
-  margin-top: 6rem;
-  color: var(--color-text-in-primary);
-
-  animation: ${scrollAnimation} 3.5s ease infinite;
+export const ButtonsContainer = styled.div`
+  width: 90vw;
+  margin: 0 auto;
 
   @media (min-width: 768px) {
-    margin-top: 2rem;
-  }
-
-  @media (min-width: 1024px) {
-    display: none;
-  }
-`;
-
-export const ButtonsContainer = styled.div`
-  max-width: 425px;
-
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 25vh 55vh 20vh;
-  grid-template-areas: 
-    "info info"
-    "buttons buttons"
-    "total total"
-  ;
-
-  @media (min-width: 450px) and (max-width: 660px) {
-    max-width: 650px;
-  }
-
-  @media (min-width: 660px) {
+    width: 90vw;
     max-width: 768px;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 60vh 20vh;
-    grid-template-areas: 
-      "info buttons"
-      "total total"
-  }
 
-  @media (min-width: 844px) {
-    max-width: 940px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 
   @media (min-width: 1024px) {
-    width: 100vw;
+    width: 90vw;
     max-width: 1024px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin: 0 auto;
-    margin-top: 7rem;
+
+    margin-top: 5.6rem;
   }
 
   @media (min-width: 1360px) and (max-width: 1439px) {
@@ -270,58 +224,62 @@ export const ButtonsContainer = styled.div`
   }
 `;
 
-export const Info = styled.div`
-  grid-area: info;
-  margin: auto;
+export const Title = styled.div`
+  > div {
+    margin-top: 5.6rem;
 
-    > div {
-      > p {
-        font-size: 2rem;
-        line-height: 3rem;
-      }
-
-      > span {
-        font-size: 2rem;
-        font-weight: 600;
-        line-height: 3rem;
-      }
+    > p {
+      font-size: 2rem;
+      line-height: 3rem;
     }
 
-  @media (min-width: 1024px) {
+    > span {
+      font-size: 2rem;
+      font-weight: 600;
+      line-height: 3rem;
+    }
+  }
+
+  @media (min-width: 768px) {
     > div {
-      margin-right: 8rem;
+      margin-top: 0;
     }
   }
 `;
 
 export const Total = styled.div`
-  grid-area: total;
-  margin: auto;
-  
+  margin-top: 5.6rem;
+
   > span {
     color: var(--color-text-complement);
     font-size: 1.2rem;
     line-height: 2rem;
+
+    > img {
+      margin-left: 0.8rem;
+    }
   }
 
-  @media (min-width: 1024px) {
-    max-width: 15rem;
+  @media (min-width: 768px) {
+    margin-top: 0;
   }
 `;
 
 export const Buttons = styled.div`
-    grid-area: buttons;
-    margin: auto;
+  margin-top: 2.5rem;
+
+  display: flex;
+  justify-content: space-between;
 
     a {
-      width: 28rem;
-      height: 10rem;
+      width: 30rem;
+      height: 10.4rem;
       border-radius: 0.8rem;
       font: 700 2.0rem Archivo;
+
       cursor: pointer;
 
       display: flex;
-      flex-direction: row;
       align-items: center;
       justify-content: center;
 
@@ -331,7 +289,7 @@ export const Buttons = styled.div`
       transition: all 0.2s;
 
       & + a {
-        margin-top: 1.5rem;
+        margin-left: 1.5rem;
       }
 
       &.study {
@@ -353,14 +311,29 @@ export const Buttons = styled.div`
       }
 
       > img {
-        width: 4.0rem;
-        height: 4.0rem;
-        margin-right: 2.5rem;
+        width: 4rem;
+        margin-right: 1.6rem;
       }
     }
+  
+  @media (min-width: 768px) {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    a {
+      width: 23.5rem;
+      height: 10rem;
+
+      & + a {
+        margin-top: 1.5rem;
+        margin-left: 0;
+      }
+    }
+  }
 
   @media (min-width: 1024px) {
-
+    margin-top: 0;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
