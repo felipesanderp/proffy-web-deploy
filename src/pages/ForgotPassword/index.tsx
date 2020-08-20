@@ -42,7 +42,9 @@ const ForgotPassword: React.FC = () => {
           abortEarly: false,
         });
 
-        api.post('/forgot-password', data);
+        await api.post('/password/forgot', {
+          email: data.email,
+        });
         
         addSuccess({
           title: 'Redefinição enviada!',
